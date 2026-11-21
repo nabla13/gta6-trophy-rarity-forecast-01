@@ -41,7 +41,7 @@ print the same page carry no new information. Then:
   themselves (the first chapter, the fishing the game opens with), for
   which about one new player in fifty is assumed to have caught up. The
   spread is a half logit unit, honest about a refresh the case has not
-  seen. On the practice cases this branch scores about 0.24 against the
+  seen. On the practice cases this branch scores about 0.18 against the
   house baseline's 1.51 (local scorer, refresh answers estimated from the
   rules' own figures).
 * Moving history (several distinct reads). For each trophy, a least-squares
@@ -73,8 +73,7 @@ writes the same bytes.
 import json
 import math
 import os
-import sys
-from datetime import datetime, timezone
+from datetime import datetime
 from pathlib import Path
 
 INPUT_DIR = Path(os.environ.get("MAKEFUN_INPUT_DIR", "/input"))
@@ -338,7 +337,6 @@ def forecast_case(case, name):
 
 
 def main():
-    INPUT_DIR.mkdir(parents=True, exist_ok=True)
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     names = sorted(name for name in os.listdir(INPUT_DIR) if name.endswith(".in"))
     for name in names:
